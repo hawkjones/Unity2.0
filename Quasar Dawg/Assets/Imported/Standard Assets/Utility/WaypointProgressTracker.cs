@@ -101,7 +101,7 @@ namespace UnityStandardAssets.Utility
 
         private void Update()
         { 
-            if (priorTimeScale != Time.timeScale)
+            if (Math.Abs(priorTimeScale - Time.timeScale) > Mathf.Epsilon)
             {
                 lookAheadForTargetOffset = initialLookAheadOffset * Time.timeScale;
                 priorTimeScale = Time.timeScale;
